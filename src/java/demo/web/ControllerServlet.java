@@ -36,6 +36,7 @@ public class ControllerServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         if (serv_path.equals("/login.do")) {
+<<<<<<< HEAD
             //...
             return "/error-no-user_access.html";
         } 
@@ -46,6 +47,65 @@ public class ControllerServlet extends HttpServlet {
         } 
         
         else if (serv_path.equals("/refresh.do")) {
+=======
+            String user;
+            String password;
+            MessageWall_and_RemoteLogin_Impl messageWall_and_RemoteLogin_Impl;
+            UserAccess_Impl userAccess_Impl;
+
+            messageWall_and_RemoteLogin_Impl = new MessageWall_and_RemoteLogin_Impl();
+
+            user = request.getParameter("user");
+            password = request.getParameter("password");
+
+            userAccess_Impl = (UserAccess_Impl) messageWall_and_RemoteLogin_Impl.connect(user, password);
+
+            session.setAttribute("useraccess", userAccess_Impl);
+
+            return "/view/wallview.jsp";
+        } else if (serv_path.equals("/put.do")) {
+            String user;
+            String message;
+
+            MessageWall_and_RemoteLogin_Impl messageWall_and_RemoteLogin_Impl;
+            UserAccess_Impl userAccess_Impl;
+
+            userAccess_Impl = (UserAccess_Impl) session.getAttribute("useraccess");
+            message = request.getParameter("msg");
+
+            user = userAccess_Impl.getUser();
+            if (user == null) {
+                return "/error-not-loggedin.html";
+            }
+
+            if (message != null) {
+                userAccess_Impl.put(message);
+                session.setAttribute("useraccess", userAccess_Impl);
+            }
+
+            return "/view/wallview.jsp";
+        } else if (serv_path.equals("/delete.do")) {
+            String user;
+            int delete;
+
+            MessageWall_and_RemoteLogin_Impl messageWall_and_RemoteLogin_Impl;
+            UserAccess_Impl userAccess_Impl;
+
+            userAccess_Impl = (UserAccess_Impl) session.getAttribute("useraccess");
+            delete = Integer.parseInt(request.getParameter("delete"));
+
+            user = userAccess_Impl.getUser();
+            if (user == null) {
+                return "/error-not-loggedin.html";
+            }
+
+            userAccess_Impl.delete(delete);
+            session.setAttribute("useraccess", userAccess_Impl);
+            
+            return "/view/wallview.jsp";
+              
+        } else if (serv_path.equals("/refresh.do")) {
+>>>>>>> parent of 3458123... Update ControllerServlet.java
             //...
             return "/error-not-loggedin.html";
         } 
