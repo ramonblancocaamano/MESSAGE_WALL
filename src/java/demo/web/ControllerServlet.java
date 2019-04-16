@@ -79,24 +79,25 @@ public class ControllerServlet extends HttpServlet {
             return "/view/wallview.jsp";
         } else if (serv_path.equals("/delete.do")) {
             String user;
-            int delete;
+            int index;
 
             MessageWall_and_RemoteLogin_Impl messageWall_and_RemoteLogin_Impl;
             UserAccess_Impl userAccess_Impl;
 
             userAccess_Impl = (UserAccess_Impl) session.getAttribute("useraccess");
-            delete = Integer.parseInt(request.getParameter("delete"));
+            
 
             user = userAccess_Impl.getUser();
             if (user == null) {
                 return "/error-not-loggedin.html";
             }
-
-            userAccess_Impl.delete(delete);
+            
+            index = Integer.parseInt(request.getParameter("index"));
+            
+            userAccess_Impl.delete(index);
             session.setAttribute("useraccess", userAccess_Impl);
             
-            return "/view/wallview.jsp";
-              
+            return "/view/wallview.jsp";         
         } else if (serv_path.equals("/refresh.do")) {
             //...
             return "/error-not-loggedin.html";
