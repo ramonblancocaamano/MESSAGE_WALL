@@ -6,8 +6,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 /**
- * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
- * @About: Web application lifecycle listener.
+ * Web application lifecycle listener.
+ *
+ * @author juanluis
  */
 public class ContextListener implements ServletContextListener {
 

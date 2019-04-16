@@ -5,47 +5,45 @@ import demo.spec.MessageWall;
 import demo.spec.UserAccess;
 import java.util.List;
 
-/**
- * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
- */
 public class UserAccess_Impl implements UserAccess {
 
     private String user;
     private MessageWall messageWall;
 
-    public UserAccess_Impl(MessageWall messageWall, String user) {
-        this.messageWall = messageWall;
-        this.user = user;
+    public UserAccess_Impl(MessageWall mw, String usr) {
+        messageWall = mw;
+        user = usr;
     }
 
     @Override
     public String getUser() {
-        return user;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Message getLast() {
-        return messageWall.getLast();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int getNumber() {
-        return messageWall.getNumber();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void put(String msg) {
-        messageWall.put(user, msg);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean delete(int index) {
-        return messageWall.delete(user, index);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<Message> getAllMessages() {
-        return messageWall.getAllMessages();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
 }

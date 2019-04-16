@@ -2,27 +2,20 @@ package demo.impl;
 
 import demo.spec.Message;
 
-/**
- * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
- */
-public class Message_Impl implements Message, java.io.Serializable {
-
-    private String user, message;
-
-    public Message_Impl(String user, String msg) {
-        this.user = user;
-        this.message = msg;
-    }
+public class Message_Impl implements Message, java.io.Serializable{
+    
+	private String user, message;
 
     @Override
     public String getContent() {
-        return message;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public String getOwner() {
-        return user;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+	
 }
 
