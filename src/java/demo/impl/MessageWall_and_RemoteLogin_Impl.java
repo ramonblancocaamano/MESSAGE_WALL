@@ -7,39 +7,53 @@ import demo.spec.UserAccess;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
+ */
 public class MessageWall_and_RemoteLogin_Impl implements RemoteLogin, MessageWall {
 
     private List<Message> messages;
 
+    public MessageWall_and_RemoteLogin_Impl() {
+        messages = new ArrayList<Message>();
+    }
+
     @Override
-    public UserAccess connect(String usr, String passwd) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public UserAccess connect(String user, String password) {
+        UserAccess_Impl userAccess = new UserAccess_Impl(this, user);
+        return userAccess;
     }
 
     @Override
     public void put(String user, String msg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Message_Impl message = new Message_Impl(user, msg);
+        messages.add(message);
     }
 
     @Override
     public boolean delete(String user, int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (messages.get(index).getOwner().equals(user)) {
+            messages.remove(index);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public Message getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Message message = messages.get(getNumber());
+        return message;
     }
 
     @Override
     public int getNumber() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int number = messages.size() - 1;
+        return number;
     }
 
     @Override
     public List<Message> getAllMessages() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return messages;
     }
 
-    
 }
