@@ -1,0 +1,60 @@
+[33mcommit acef46fabbbcee1e5e7647543d9c805e542e049e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ramón Blanco Caamaño <ramonblancocaamano@gmail.com>
+Date:   Tue Apr 16 18:25:44 2019 +0200
+
+    Revert "Update ControllerServlet.java"
+    
+    This reverts commit 34581239e11a51811995c45b3e0c10ddc9aafb89.
+
+[33mcommit 34581239e11a51811995c45b3e0c10ddc9aafb89[m
+Author: Ramón Blanco Caamaño <ramonblancocaamano@gmail.com>
+Date:   Tue Apr 16 18:25:36 2019 +0200
+
+    Update ControllerServlet.java
+    
+    @NEW
+    - Wallview: delete a message posted on the wall.
+    @TODO
+    - Wallview: refresh wall view message.
+    - Modify the ControllerServlet to show the new view instead of the old one.
+    - Add a minimal login functionality using a hash table with predefined pair of user/password.
+    - Revision.
+
+[33mcommit 4bfc37f1f894c09d020c6867adb4687bec2df759[m
+Author: Ramón Blanco Caamaño <ramonblancocaamano@gmail.com>
+Date:   Tue Apr 16 18:19:58 2019 +0200
+
+    0.02
+    
+    @NEW
+     - General revision of the code example.
+     - Basic login funcionality based on user.
+     - Complete the code for the classes in packages demo.impl and the java class ControllerServlet.
+     - Wallview: show all messages posted on the wall.
+     - Wallview code: send message funcionality.
+    @TODO
+     - Wallview: delete a message posted on the wall.
+     - Wallview: refresh wall view message.
+     - Modify the ControllerServlet to show the new view instead of the old one.
+     - Add a minimal login functionality using a hash table with predefined pair of user/password.
+     - Revision.
+
+[33mcommit d3c0146cf97c8039becd2b7f5deb3180d03b44f7[m
+Author: Ramón Blanco Caamaño <ramonblancocaamano@gmail.com>
+Date:   Mon Apr 15 11:41:21 2019 +0200
+
+    Update README.md
+
+[33mcommit 2d2de64d9a1b492befd47f7a289947480b2b75d0[m
+Author: Ramón Blanco Caamaño <ramonblancocaamano@gmail.com>
+Date:   Mon Apr 15 11:39:37 2019 +0200
+
+    0.01
+    
+    You must complete the exercise as stated on the slides: “1 Message Wall Service” up until the end of the requirements, concluding with the programming of a new jsp file named wallview.jsp to produce the view as shown on slide 10 with the corresponding functionality.
+
+[33mcommit 0117fde523b7074f8ddacb3764d8dc12dddca1a2[m
+Author: Ramón Blanco Caamaño <ramonblancocaamano@gmail.com>
+Date:   Mon Apr 15 11:37:21 2019 +0200
+
+    Initial commit
