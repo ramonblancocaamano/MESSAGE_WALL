@@ -1,3 +1,4 @@
+<%@page import="demo.impl.MessageWall_and_RemoteLogin_Impl"%>
 <%@page import="demo.impl.UserAccess_Impl"%>
 <%@page import="demo.spec.Message"%>
 <%@ page import="demo.spec.UserAccess"%>
@@ -13,13 +14,15 @@
 
 <%
     String user;
-    UserAccess_Impl userAccess_Impl;
     List<Message> messages;
+    UserAccess_Impl userAccess_Impl;
+    MessageWall_and_RemoteLogin_Impl messageWall;
     
     userAccess_Impl = (UserAccess_Impl) session.getAttribute("useraccess");
-    
     user = userAccess_Impl.getUser();
-    messages = userAccess_Impl.getAllMessages();
+    
+    messageWall = (MessageWall_and_RemoteLogin_Impl) session.getAttribute("messagewall");
+    messages = messageWall.getAllMessages();
 %>
 
 <script>

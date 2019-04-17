@@ -13,14 +13,23 @@ import java.util.List;
 public class MessageWall_and_RemoteLogin_Impl implements RemoteLogin, MessageWall {
 
     private List<Message> messages;
+    UserAccess_Impl userAccess;
 
     public MessageWall_and_RemoteLogin_Impl() {
         messages = new ArrayList<Message>();
+        userAccess = null;
     }
 
     @Override
     public UserAccess connect(String user, String password) {
-        UserAccess_Impl userAccess = new UserAccess_Impl(this, user);
+        userAccess = new UserAccess_Impl(this, user);
+        return userAccess;
+    }
+    
+    public UserAccess disconnect(String user) {
+        if(userAccess.getUser().equals(user)) {
+            userAccess = null;
+        }
         return userAccess;
     }
 

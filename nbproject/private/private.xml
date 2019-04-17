@@ -3,6 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/ramon/Documents/NetBeansProjects/MESSAGE_WALL/src/java/demo/spec/Message.java</file>
+            <file>file:/C:/Users/ramon/Documents/NetBeansProjects/MESSAGE_WALL/src/java/demo/web/action/Action.java</file>
+            <file>file:/C:/Users/ramon/Documents/NetBeansProjects/MESSAGE_WALL/web/view/wallview.jsp</file>
+            <file>file:/C:/Users/ramon/Documents/NetBeansProjects/MESSAGE_WALL/src/java/demo/web/ControllerServlet.java</file>
+            <file>file:/C:/Users/ramon/Documents/NetBeansProjects/MESSAGE_WALL/src/java/demo/impl/UserAccess_Impl.java</file>
+            <file>file:/C:/Users/ramon/Documents/NetBeansProjects/MESSAGE_WALL/src/java/demo/impl/MessageWall_and_RemoteLogin_Impl.java</file>
+        </group>
     </open-files>
 </project-private>
