@@ -21,7 +21,7 @@
     userAccess_Impl = (UserAccess_Impl) session.getAttribute("useraccess");
     user = userAccess_Impl.getUser();
     
-    messageWall = (MessageWall_and_RemoteLogin_Impl) session.getAttribute("messagewall");
+    messageWall = (MessageWall_and_RemoteLogin_Impl) getServletContext().getAttribute("remoteLogin");
     messages = messageWall.getAllMessages();
 %>
 

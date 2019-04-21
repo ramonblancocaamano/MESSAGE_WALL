@@ -19,6 +19,7 @@ public class ContextListener implements ServletContextListener {
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        
+        ServletContext context = sce.getServletContext();
+        context.removeAttribute("remoteLogin");
     }
 }

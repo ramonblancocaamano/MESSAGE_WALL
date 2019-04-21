@@ -10,18 +10,16 @@ import java.util.List;
 /**
  * @Author: BLANCO CAAMANO, Ramon <ramonblancocaamano@gmail.com>
  */
-public class MessageWall_and_RemoteLogin_Impl implements RemoteLogin, MessageWall {
-
+public class MessageWall_and_RemoteLogin_Impl implements RemoteLogin, MessageWall {    
     private List<Message> messages;
-    UserAccess_Impl userAccess;
+    private UserAccess_Impl userAccess;
 
     public MessageWall_and_RemoteLogin_Impl() {
         messages = new ArrayList<Message>();
-        userAccess = null;
     }
 
     @Override
-    public UserAccess connect(String user, String password) {
+    public UserAccess connect(String user, String password) {       
         userAccess = new UserAccess_Impl(this, user);
         return userAccess;
     }
@@ -41,7 +39,10 @@ public class MessageWall_and_RemoteLogin_Impl implements RemoteLogin, MessageWal
 
     @Override
     public boolean delete(String user, int index) {
-        if (messages.get(index).getOwner().equals(user)) {
+        if (user.equals("ADMIN")) {
+            messages.remove(index);
+            return true;
+        } else if (messages.get(index).getOwner().equals(user)) {
             messages.remove(index);
             return true;
         }
